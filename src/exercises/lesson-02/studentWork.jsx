@@ -3,6 +3,7 @@
 //Import components here
 import SnackHeader from "./SnackHeader";
 import SnackList from "./SnackList";
+import SnackFooter from "./SnackFooter";
 
 export default function StudentWork() {
   return (
@@ -10,7 +11,7 @@ export default function StudentWork() {
       {/* add JSX here */}
       <SnackHeader />
       <SnackList />
-      <p> Student output will go here</p>
+      <SnackFooter />
     </div>
   );
 }
