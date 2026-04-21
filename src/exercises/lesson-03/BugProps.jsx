@@ -11,12 +11,13 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
+import { useState } from 'react';
 
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState ('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -29,3 +30,5 @@ export default function BugProps({ name = 'friend' }) {
 
 // Explanation:
 // (Write your explanation here)
+// React has no way to access message after the first render.
+// By using useState, we can tell React to re-render the message.
