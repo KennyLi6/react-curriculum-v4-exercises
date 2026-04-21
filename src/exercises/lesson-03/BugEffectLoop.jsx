@@ -15,10 +15,12 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
 // (Write your explanation here)
+// Without dependencies, the useEffect function runs again whenever the compoment is re-rendered.  
+// To stop this, we add an empty dependency array so that there is no update rerun.
