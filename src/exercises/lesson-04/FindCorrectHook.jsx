@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function FindCorrectHook() {
-  const [clickCount, setClickCount] = useState(0); // ← incorrect implementation
+  const [clickCount, setClickCount] = useState(0);
 
   function handleClick() {
     setClickCount(p => p + 1)
