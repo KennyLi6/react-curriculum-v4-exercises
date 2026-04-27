@@ -16,3 +16,5 @@ export default function FindCorrectHook() {
     </div>
   );
 }
+
+// React has no way to know when to update when using useRef, so we use useState

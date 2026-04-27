@@ -16,3 +16,5 @@ export default function Parent() {
     </div>
   );
 }
+
+// Pass on the increment function to Child

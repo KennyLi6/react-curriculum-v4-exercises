@@ -19,3 +19,5 @@ export default function FillRefFocus() {
     </div>
   );
 }
+
+// We keep a reference to the input box and focus onto the reference when the button is clicked.

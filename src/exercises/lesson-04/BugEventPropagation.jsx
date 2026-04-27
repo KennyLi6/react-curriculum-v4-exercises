@@ -23,3 +23,6 @@ export default function BugEventPropagation() {
     </>
   );
 }
+
+// We enable event.stoPropagation to stop React from triggering red box code when
+// green box code has run.
