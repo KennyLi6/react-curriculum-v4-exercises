@@ -42,6 +42,26 @@ export default function SnackForm({
     // }
   }
 
+  function validateName() {
+    return name.trim !== "";
+  }
+
+  function validateRating() {
+    return rating !== "";
+  }
+
+  function getNameError() {
+    if (!validateName() && touched.name) {
+      return "Snack name is required";
+    }
+  }
+
+  function getRatingError() {
+    if (!validateRating() && touched.rating) {
+      return "Please select a rating";
+    }
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
