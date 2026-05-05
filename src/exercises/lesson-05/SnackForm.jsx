@@ -15,16 +15,13 @@ export default function SnackForm({
   const [touched, setTouched] = useState({ name:false, rating:false });
 
   useEffect(() => {
-    if (isEditing) {
+    if (editingSnack) {
       setName(editingSnack.name);
       setRating(editingSnack.rating.toString());
     } else {
       setName("");
       setRating("");
     }
-    console.log(name);
-    console.log(rating);
-    console.log(touched);
     setTouched({ name: false, rating: false })
   }, [editingSnack]);
 
