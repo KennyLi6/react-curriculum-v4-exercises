@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import { useTaskList } from './src/hooks/useTaskList';
+import { filterTasks } from './src/utils/filterTasks';
 
 export default function StudentWork() {
   const [filter, setFilter] = useState('all');
   const { tasks, loading } = useTaskList();
 
-  // #2: Filtering logic inside component
-  let visibleTasks = tasks;
-  if (filter === 'completed') {
-    visibleTasks = tasks.filter((task) => task.completed);
-  }
-  if (filter === 'pending') {
-    visibleTasks = tasks.filter((task) => !task.completed);
-  }
+  const visibleTasks = filterTasks(filter, tasks);
 
   if (loading) {
     return <p>Loading tasks...</p>;
