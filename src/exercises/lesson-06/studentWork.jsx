@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTaskList } from './src/hooks/useTaskList';
 import { filterTasks } from './src/utils/filterTasks';
+import { Greeting } from './src/components/Greeting';
 
 export default function StudentWork() {
   const [filter, setFilter] = useState('all');
@@ -14,8 +15,7 @@ export default function StudentWork() {
 
   return (
     <div>
-      {/* #3: Hardcoded UI, not reusable */}
-      <h2>Welcome, Student</h2>
+      <Greeting name="Student"/>
 
       {/* #4: Repeated button JSX */}
       <div>
