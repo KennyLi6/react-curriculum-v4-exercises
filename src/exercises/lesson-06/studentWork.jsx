@@ -3,6 +3,7 @@ import { useTaskList } from './src/hooks/useTaskList';
 import { filterTasks } from './src/utils/filterTasks';
 import { Greeting } from './src/components/Greeting';
 import { TaskFilterButtons } from './src/components/TaskFilterButtons';
+import { TaskItem } from './src/components/TaskItem';
 
 export default function StudentWork() {
   const [filter, setFilter] = useState('all');
@@ -22,13 +23,8 @@ export default function StudentWork() {
         <TaskFilterButtons filter={filter} onFilterChange={setFilter}/>
       </div>
 
-      {/* #5: Inline list rendering */}
       <ul>
-        {visibleTasks.map((task) => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '✅' : '⏳'}
-          </li>
-        ))}
+        {visibleTasks.map((task) => (<TaskItem key={task.id} task={task}/>))}
       </ul>
     </div>
   );
