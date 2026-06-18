@@ -7,9 +7,11 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const id = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+
+    return () => clearInterval(id);
   }, []);
 
   return (
@@ -21,3 +23,6 @@ export default function BugStrictMode() {
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+// StrictMode allows us to see that we are not clearing previous intervals.
+// When the component mounts, StrictMode runs the effect twice, 
+// which leads to two intervals counting at the same time.
